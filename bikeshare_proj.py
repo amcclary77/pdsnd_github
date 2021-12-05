@@ -57,7 +57,6 @@ def get_filters():
             print('-'*40)
             return city, month, day
 
-
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
@@ -73,7 +72,6 @@ def load_data(city, month, day):
     #print(df.head())
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     #print(df['Start Time'].head())
-
     df['month'] = df['Start Time'].dt.month
     #print(df['month'].head())
     df['day'] = df['Start Time'].dt.day_name()
@@ -85,13 +83,11 @@ def load_data(city, month, day):
         df = df[df['month'] == month]
         #print(df['month'].head())
 
-
     if day != 'all':
         days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
         df = df[df['day'] == day.title()]
         #print(df['day'])
     return df
-
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -116,7 +112,6 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
@@ -139,7 +134,6 @@ def station_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
@@ -159,7 +153,6 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
@@ -174,18 +167,15 @@ def user_stats(df):
     # TO DO: Display counts of gender
         gender_cnt = df.groupby(['Gender']).sum()
         print('Gender Count: \n', gender_cnt)
-
         #print(df['Gender'])
     # TO DO: Display earliest, most recent, and most common year of birth
 
         e_birthyear = df['Birth Year'].min()
         print('The earliest year of birth is: ', e_birthyear.astype(int))
         print()
-
         r_birthyear = df['Birth Year'].max()
         print('The most recent year of birth is: ', r_birthyear.astype(int))
         print()
-
         c_birthyear = df['Birth Year'].mode()[0]
         print('The most common year of birth: ', c_birthyear.astype(int))
         print()
@@ -194,11 +184,8 @@ def user_stats(df):
         print()
         print('There is no additional data available for Washington.')
 
-
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 def main():
     while True:
@@ -225,7 +212,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
 	main()
