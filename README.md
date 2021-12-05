@@ -11,10 +11,7 @@ The Bikeshare Project contains bike share data from Chicago, New York City and W
 The data in this project will uncover bike share usage patterns that can be compared between the three cities mentioned above.
 
 ### Files used
-bikeshare_proj.py
-chicago.csv
-new_york_city.csv
-washington.csv
+bikeshare_proj.py, chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
 I don't have any credits to mention.
